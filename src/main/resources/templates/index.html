@@ -1,219 +1,637 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../favicon.ico">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="~{fragments/header :: header}">
+</head>
+<body>
+<div class="nav">
+  <ul>
+    <li><a href="/">首页</a></li>
+    <!--我的书架功能待开发-->
+    <li><a href="/modules/article/bookcase.php">我的书架</a></li>
+    <li><a href="/xuehuan/">玄幻小说</a></li>
+    <li><a href="/xiuzhen/">修真小说</a></li>
+    <li><a href="/dushi/">都市小说</a></li>
+    <li><a href="/chuanyue/">穿越小说</a></li>
+    <li><a href="/wangyou/">网游小说</a></li>
+    <li><a href="/kehuan/">科幻小说</a></li>
+    <li><a href="/qita/">其他小说</a></li>
+    <li><a href="/paihangbang/">排行榜单</a></li>
+    <li><a href="/wanben/">完本小说</a></li>
+  </ul>
+</div>
 
-    <title>Carousel Template for Bootstrap</title>
+<div class="wrap">
+  <div class="hot">
+    <div class="l bd">
+      <div class="item">
+        <div class="p10">
+          <div class="image"><a href="/book/4772/" target="_blank"><img
+              src="/images/4772s.jpg" alt="圣墟"></a></div>
+          <dl>
+            <dt><span>辰东</span><a href="/book/4772/" target="_blank">圣墟</a>
+            </dt>
+            <dd>　　在破败中崛起，在寂灭中复苏。　　沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界......</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="item">
+        <div class="p10">
+          <div class="image"><a href="/book/3773/" target="_blank"><img
+              src="/images/3773s.jpg" alt="三寸人间"></a></div>
+          <dl>
+            <dt><span>耳根</span><a href="/book/3773/" target="_blank">三寸人间</a>
+            </dt>
+            <dd>　　举头三尺无神明，掌心三寸是人间。　　这是耳根继《仙逆》《求魔》《我欲封天》《一念永恒》后，创作的第五部长篇小说《......</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="item">
+        <div class="p10">
+          <div class="image"><a href="/book/24277/" target="_blank"><img
+              src="/images/24277s.jpg" alt="飞剑问道"></a></div>
+          <dl>
+            <dt><span>我吃西红柿</span><a href="/book/24277/"
+                                     target="_blank">飞剑问道</a></dt>
+            <dd>　　在这个世界，有狐仙、河神、水怪、大妖，也有求长生的修行者。　　修行者们，　　开法眼，可看妖魔鬼怪。　　炼一口飞剑......</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="item">
+        <div class="p10">
+          <div class="image"><a href="/book/24276/" target="_blank"><img
+              src="/images/24276s.jpg" alt="元尊"></a></div>
+          <dl>
+            <dt><span>天蚕土豆</span><a href="/book/24276/"
+                                    target="_blank">元尊</a></dt>
+            <dd>天地为炉，万物为铜，阴阳为炭，造化为工。
+              气运之争，蟒雀吞龙。
+              究竟是蟒雀为尊，还是圣龙崛起，凌驾众生？
+              这是气掌乾......
+            </dd>
+          </dl>
+        </div>
+      </div>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../static/dist/css/bootstrap.min.css" rel="stylesheet">
+    </div>
+    <div class="r bd">
+      <h2>强力推荐</h2>
+      <ul class="lis">
+        <li><span class="s1">[修真]</span><span class="s2"><a
+            href="/book/110/">不朽凡人</a></span><span class="s5">鹅是老五</span>
+        </li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/420/">龙王传说</a></span><span class="s5">唐家三少</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/9868/">超级全能学生</a></span><span class="s5">杀猪刀</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/1913/">女神的贴身侍卫</a></span><span
+            class="s5">我自对天笑</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/9864/">神级透视</a></span><span class="s5">不醉</span></li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/14719/">牧神记</a></span><span class="s5">宅猪</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/9860/">我的微信连三界</a></span><span class="s5">狼烟</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/18095/">权力代言人</a></span><span class="s5">梅花三弄</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/16806/">官梯</a></span><span class="s5">钓人的鱼</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../static/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../static/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="../static/assets/css/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
+  <div class="type bd">
+    <div class="block">
+      <h2>玄幻小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/4772/" target="_blank"><img
+              src="./4772s.jpg" alt="圣墟"></a></div>
+          <dl>
+            <dt><a href="/book/4772/" target="_blank">圣墟</a></dt>
+            <dd>　　在破败中崛起，在寂灭中复苏。　　沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界......</dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/24276/" target="_blank" title="元尊">元尊</a>/天蚕土豆
+          </li>
+          <li><a href="/book/1132/" target="_blank" title="武道大帝">武道大帝</a>/忘情至尊
+          </li>
+          <li><a href="/book/1626/" target="_blank" title="绝世战魂">绝世战魂</a>/极品妖孽
+          </li>
+          <li><a href="/book/101/" target="_blank" title="混沌剑神">混沌剑神</a>/心星逍遥
+          </li>
+          <li><a href="/book/43537/" target="_blank" title="一剑独尊">一剑独尊</a>/青鸾峰上
+          </li>
+          <li><a href="/book/54607/" target="_blank" title="我乃大后期">我乃大后期</a>/暗夜烟枪
+          </li>
+          <li><a href="/book/48564/" target="_blank"
+                 title="外挂傍身的杂草">外挂傍身的杂草</a>/低调青年
+          </li>
+          <li><a href="/book/1509/" target="_blank" title="造化之王">造化之王</a>/猪三不
+          </li>
+          <li><a href="/book/14719/" target="_blank" title="牧神记">牧神记</a>/宅猪
+          </li>
+          <li><a href="/book/16765/" target="_blank" title="九转帝尊">九转帝尊</a>/忘情至尊
+          </li>
+          <li><a href="/book/420/" target="_blank" title="龙王传说">龙王传说</a>/唐家三少
+          </li>
+          <li><a href="/book/29463/" target="_blank" title="天辰">天辰</a>/火星引力
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block">
+      <h2>修真小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/3773/" target="_blank"><img
+              src="./3773s.jpg" alt="三寸人间"></a></div>
+          <dl>
+            <dt><a href="/book/3773/" target="_blank">三寸人间</a></dt>
+            <dd>　　举头三尺无神明，掌心三寸是人间。　　这是耳根继《仙逆》《求魔》《我欲封天》《一念永恒》后，创作的第五部长篇小说《......</dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/12056/" target="_blank" title="修罗刀帝">修罗刀帝</a>/恋青衣
+          </li>
+          <li><a href="/book/9750/" target="_blank" title="至尊神魔">至尊神魔</a>/天意留香
+          </li>
+          <li><a href="/book/9758/" target="_blank" title="九阳神王">九阳神王</a>/寂小贼
+          </li>
+          <li><a href="/book/26182/" target="_blank" title="凡人修仙之仙界篇">凡人修仙之仙界篇</a>/忘语
+          </li>
+          <li><a href="/book/9751/" target="_blank" title="灵武帝尊">灵武帝尊</a>/孤雨随风
+          </li>
+          <li><a href="/book/232/" target="_blank" title="我欲封天">我欲封天</a>/耳根
+          </li>
+          <li><a href="/book/24277/" target="_blank" title="飞剑问道">飞剑问道</a>/我吃西红柿
+          </li>
+          <li><a href="/book/26233/" target="_blank" title="亘古大帝">亘古大帝</a>/陈辉
+          </li>
+          <li><a href="/book/40659/" target="_blank" title="封神问道行">封神问道行</a>/莫问初心
+          </li>
+          <li><a href="/book/5572/" target="_blank" title="问鼎巅峰">问鼎巅峰</a>/十月流年
+          </li>
+          <li><a href="/book/9753/" target="_blank" title="超级武神">超级武神</a>/语成
+          </li>
+          <li><a href="/book/31647/" target="_blank" title="至尊修罗">至尊修罗</a>/十月流年
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block">
+      <h2>都市小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/36242/" target="_blank"><img
+              src="./36242s.jpg" alt="重生之都市仙尊"></a></div>
+          <dl>
+            <dt><a href="/book/36242/" target="_blank">重生之都市仙尊</a></dt>
+            <dd>【2019最火爆新书】“一代仙尊”洛尘遭人偷袭，重生回到地球。地位普通的他，面对女朋友的鄙视，情敌的嘲讽，父母的悲惨......</dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/16564/" target="_blank" title="蚀骨危情">蚀骨危情</a>/淇老游
+          </li>
+          <li><a href="/book/31556/" target="_blank" title="神级龙卫">神级龙卫</a>/花幽山月
+          </li>
+          <li><a href="/book/47904/" target="_blank"
+                 title="我真没想出名啊">我真没想出名啊</a>/巫马行
+          </li>
+          <li><a href="/book/11048/" target="_blank"
+                 title="回到地球当神棍">回到地球当神棍</a>/勿小悟
+          </li>
+          <li><a href="/book/16452/" target="_blank"
+                 title="重生弃少归来">重生弃少归来</a>/黑色毛衣
+          </li>
+          <li><a href="/book/22862/" target="_blank"
+                 title="都市之最强狂兵">都市之最强狂兵</a>/大红大紫
+          </li>
+          <li><a href="/book/9817/" target="_blank"
+                 title="最强高手在都市">最强高手在都市</a>/散心靓意
+          </li>
+          <li><a href="/book/9868/" target="_blank" title="超级全能学生">超级全能学生</a>/杀猪刀
+          </li>
+          <li><a href="/book/36661/" target="_blank" title="强势锁婚：傅少的哑巴新妻">强势锁婚：傅少的哑巴新妻</a>/一湖深
+          </li>
+          <li><a href="/book/18334/" target="_blank" title="第一狂妃：废柴三小姐">第一狂妃：废柴三小姐</a>/豆娘
+          </li>
+          <li><a href="/book/4891/" target="_blank" title="逍遥兵王">逍遥兵王</a>/暗夜行走
+          </li>
+          <li><a href="/book/6979/" target="_blank" title="灵剑尊">灵剑尊</a>/云天空
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="type bd">
+    <div class="block">
+      <h2>穿越小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/49961/" target="_blank"><img
+              src="./49961s.jpg" alt="家有庶夫套路深"></a></div>
+          <dl>
+            <dt><a href="/book/49961/" target="_blank">家有庶夫套路深</a></dt>
+            <dd>
+              作为一名合格庶子，褚三始终禀诚着......
+            </dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/37771/" target="_blank"
+                 title="抗日之铁血战将">抗日之铁血战将</a>/574981
+          </li>
+          <li><a href="/book/35040/" target="_blank" title="覆汉">覆汉</a>/榴弹怕水
+          </li>
+          <li><a href="/book/31686/" target="_blank" title="重生之悍妻">重生之悍妻</a>/梅果
+          </li>
+          <li><a href="/book/7767/" target="_blank" title="穿越绝色毒妃：凤逆天下">穿越绝色毒妃：凤逆天下</a>/路非
+          </li>
+          <li><a href="/book/48486/" target="_blank"
+                 title="回到古代当匠神">回到古代当匠神</a>/王不过霸
+          </li>
+          <li><a href="/book/8614/" target="_blank" title="天唐锦绣">天唐锦绣</a>/公子許
+          </li>
+          <li><a href="/book/29302/" target="_blank" title="采红">采红</a>/这碗粥
+          </li>
+          <li><a href="/book/25169/" target="_blank" title="重生之老子是皇帝">重生之老子是皇帝</a>/步梵
+          </li>
+          <li><a href="/book/12150/" target="_blank"
+                 title="三国之巅峰召唤">三国之巅峰召唤</a>/流香千古
+          </li>
+          <li><a href="/book/27910/" target="_blank" title="皇上的心尖小皇妃">皇上的心尖小皇妃</a>/倾国倾城
+          </li>
+          <li><a href="/book/16044/" target="_blank" title="侯门弃女：妖孽丞相赖上门">侯门弃女：妖孽丞相赖上门</a>/偏方方
+          </li>
+          <li><a href="/book/14770/" target="_blank" title="残王御宠：特工医妃">残王御宠：特工医妃</a>/蓉筝
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block">
+      <h2>网游小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/36273/" target="_blank"><img
+              src="./36273s.jpg" alt="荣耀王者"></a></div>
+          <dl>
+            <dt><a href="/book/36273/" target="_blank">荣耀王者</a></dt>
+            <dd>为了游戏里的皮肤，女友竟然背着我……百星荣耀王者强势回归，手把手教你上王者！作者QQ：2792321965......</dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/17186/" target="_blank" title="超神机械师">超神机械师</a>/齐佩甲
+          </li>
+          <li><a href="/book/45565/" target="_blank"
+                 title="我是幕后大佬">我是幕后大佬</a>/一刀斩斩斩
+          </li>
+          <li><a href="/book/10316/" target="_blank" title="鬼喊抓鬼">鬼喊抓鬼</a>/三天两觉
+          </li>
+          <li><a href="/book/49247/" target="_blank" title="网游之仙佛">网游之仙佛</a>/小小小小刘
+          </li>
+          <li><a href="/book/50234/" target="_blank" title="LCK的中国外援">LCK的中国外援</a>/街区转角
+          </li>
+          <li><a href="/book/5954/" target="_blank"
+                 title="敛财人生[综].">敛财人生[综].</a>/林木儿
+          </li>
+          <li><a href="/book/45475/" target="_blank" title="我是武球王">我是武球王</a>/大头文
+          </li>
+          <li><a href="/book/46919/" target="_blank" title="英雄联盟之无限超神">英雄联盟之无限超神</a>/争不过
+          </li>
+          <li><a href="/book/52332/" target="_blank"
+                 title="时停499年">时停499年</a>/左手萝莉
+          </li>
+          <li><a href="/book/47646/" target="_blank"
+                 title="联盟之天王巨星">联盟之天王巨星</a>/剑断了
+          </li>
+          <li><a href="/book/15176/" target="_blank"
+                 title="网游之邪龙逆天">网游之邪龙逆天</a>/火星引力
+          </li>
+          <li><a href="/book/37853/" target="_blank" title="世界第一第二第三都是我">世界第一第二第三都是我</a>/大头文
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block">
+      <h2>科幻小说</h2>
+      <div class="p10">
+        <div class="top">
+          <div class="image"><a href="/book/3379/" target="_blank"><img
+              src="./3379s.jpg" alt="末日轮盘"></a></div>
+          <dl>
+            <dt><a href="/book/3379/" target="_blank">末日轮盘</a></dt>
+            <dd>　　当生命停止的刹那，叶钟鸣回到了十年前，那个末日开始的下午。　　是上天对自己的眷顾？还是又一次的惩罚？真的要重新体......</dd>
+          </dl>
+        </div>
+        <ul>
+          <li><a href="/book/26967/" target="_blank" title="摄政王的医品狂妃">摄政王的医品狂妃</a>/六月
+          </li>
+          <li><a href="/book/48582/" target="_blank"
+                 title="我有一座恐怖屋">我有一座恐怖屋</a>/我会修空调
+          </li>
+          <li><a href="/book/19001/" target="_blank" title="抗战之重生天狼战将">抗战之重生天狼战将</a>/烈阳化海
+          </li>
+          <li><a href="/book/40917/" target="_blank"
+                 title="纵横诸天的武者">纵横诸天的武者</a>/我叫排云掌
+          </li>
+          <li><a href="/book/36156/" target="_blank" title="神医毒妃">神医毒妃</a>/杨十六
+          </li>
+          <li><a href="/book/29765/" target="_blank"
+                 title="诸界末日在线">诸界末日在线</a>/烟火成城
+          </li>
+          <li><a href="/book/37901/" target="_blank"
+                 title="逆行诸天万界">逆行诸天万界</a>/丰水居士
+          </li>
+          <li><a href="/book/53341/" target="_blank"
+                 title="我的细胞监狱">我的细胞监狱</a>/穿黄衣的阿肥
+          </li>
+          <li><a href="/book/16460/" target="_blank" title="神厨狂后">神厨狂后</a>/楚鲤
+          </li>
+          <li><a href="/book/36154/" target="_blank" title="邪帝缠宠：神医九小姐">邪帝缠宠：神医九小姐</a>/豆喵喵
+          </li>
+          <li><a href="/book/21506/" target="_blank"
+                 title="三体（全集）">三体（全集）</a>/刘慈欣
+          </li>
+          <li><a href="/book/36214/" target="_blank" title="冥婚霸宠：天才萌宝腹黑娘亲">冥婚霸宠：天才萌宝腹黑娘亲</a>/南宫紫嫣
+          </li>
+        </ul>
       </div>
     </div>
 
 
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
+  </div>
+  <div class="up">
+    <div class="l bd">
+      <h2> 最近更新小说列表</h2>
+      <ul>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/53233/">夫君你完了</a></span><span class="s3"><a
+            href="/book/53233/">第179章 家人的温暖</a></span><span
+            class="s4">夏末之殇</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
+            href="/book/52972/">十二星座与四大神兽</a></span><span class="s3"><a
+            href="/book/52972/">第307章：大结局3</a></span><span
+            class="s4">杜林圭</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/54676/">倾世绝宠之错位王妃</a></span><span class="s3"><a
+            href="/book/54676/">第169章 每个人遇到真爱的概率</a></span><span class="s4">叶倾歌丶</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/55810/">暗黑系暖婚</a></span><span class="s3"><a
+            href="/book/55810/">帝后51：宁也番外（在筹备出版后续等通知</a></span><span
+            class="s4">顾南西</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/34469/">盛嫁无双：神医王爷不良妃</a></span><span class="s3"><a
+            href="/book/34469/">641.【番外最后一章】——小星儿</a></span><span class="s4">三木游游</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/30114/">权宠之仵作医妃</a></span><span class="s3"><a
+            href="/book/30114/">第562章 大结局（全文终）</a></span><span class="s4">步月浅妆</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/51438/">慢穿系统：宿主拒绝谈恋爱</a></span><span class="s3"><a
+            href="/book/51438/">架空:炮灰才是真绝色(93)</a></span><span
+            class="s4">烟末</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/51016/">穿回七零嫁兵哥</a></span><span class="s3"><a
+            href="/book/51016/">第四百九十一章</a></span><span class="s4">暗幽灵</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/50496/">末世空间：拐个大佬种包子</a></span><span class="s3"><a
+            href="/book/50496/">283：去凤族</a></span><span
+            class="s4">禾呈星云</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/36860/">总统谋妻：婚不由你</a></span><span class="s3"><a
+            href="/book/36860/">第五百九十二章：因为有你、一生欢喜</a></span><span class="s4">李不言</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/49951/">快穿之倾城</a></span><span class="s3"><a
+            href="/book/49951/">新文推荐</a></span><span
+            class="s4">诚沫</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/55782/">重生七零：农门军媳有点甜</a></span><span class="s3"><a
+            href="/book/55782/">027：全剧终</a></span><span class="s4">浅尾鱼</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/56478/">时尚女王的御夫攻略</a></span><span class="s3"><a
+            href="/book/56478/">大结局下</a></span><span
+            class="s4">斑点</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
+            href="/book/52034/">秘巫之主</a></span><span class="s3"><a
+            href="/book/52034/">第七百二十章 圣约泥板的另一种用处</a></span><span class="s4">真愚老人</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/27108/">隐婚试爱：宠妻365式</a></span><span class="s3"><a
+            href="/book/27108/">771 宠（27）只要我在你心里</a></span><span class="s4">清风恋飘雪</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/56138/">红警的征途</a></span><span class="s3"><a
+            href="/book/56138/">第二十五章爱丽丝行动（一）</a></span><span
+            class="s4">皇天当立</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/13079/">修仙强少在校园</a></span><span class="s3"><a
+            href="/book/13079/">第1732章 合道中期</a></span><span
+            class="s4">唐箫</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[修真小说]</span><span class="s2"><a
+            href="/book/51039/">重生之最强王爷</a></span><span class="s3"><a
+            href="/book/51039/">第三百五十五章 一网成擒</a></span><span
+            class="s4">海天升明月</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
+            href="/book/32203/">妖帝撩人：逆天邪妃太嚣张</a></span><span class="s3"><a
+            href="/book/32203/">第700章 紫鬼山现世（二更）</a></span><span class="s4">公子安爷</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[修真小说]</span><span class="s2"><a
+            href="/book/50121/">女帝的绝世仙师</a></span><span class="s3"><a
+            href="/book/50121/">240 萧婉儿的觉醒！（求个订阅看看）</a></span><span
+            class="s4">一只话梅</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/51483/">苏爽快穿：打脸成瘾</a></span><span class="s3"><a
+            href="/book/51483/">47：大反转【完结撒花，附完结感言】</a></span><span
+            class="s4">媚笑可倾城</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/53528/">邪王追妻：王妃有毒</a></span><span class="s3"><a
+            href="/book/53528/">第二百八十三章 我想这辈子都不会分开了！（大结局下）</a></span><span
+            class="s4">万盏夜色</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/56795/">云里山河</a></span><span class="s3"><a
+            href="/book/56795/">【正文章五五：狭路相逢】生死一线（下）</a></span><span
+            class="s4">君子长归</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[其他小说]</span><span class="s2"><a
+            href="/book/50729/">天芳</a></span><span class="s3"><a
+            href="/book/50729/">204章 三家的官司</a></span><span
+            class="s4">云芨</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/50541/">重生之逆行修仙</a></span><span class="s3"><a
+            href="/book/50541/">第一七六章 青锋三尺</a></span><span
+            class="s4">糖醋于</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[都市小说]</span><span class="s2"><a
+            href="/book/51655/">冷少甜宠落跑娇妻</a></span><span class="s3"><a
+            href="/book/51655/">他回了</a></span><span
+            class="s4">夏木木子</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[穿越小说]</span><span class="s2"><a
+            href="/book/56529/">将军抢亲记</a></span><span class="s3"><a
+            href="/book/56529/">大结局</a></span><span class="s4">河妖</span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他小说]</span><span class="s2"><a
+            href="/book/52314/">超神学院之时王</a></span><span class="s3"><a
+            href="/book/52314/">第306章 放开那个女孩</a></span><span
+            class="s4">乱世孤影</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[其他小说]</span><span class="s2"><a
+            href="/book/45918/">田园福妃</a></span><span class="s3"><a
+            href="/book/45918/">第四百七十四章</a></span><span
+            class="s4">滋洋</span><span class="s5">08-19</span></li>
+        <li><span class="s1">[科幻小说]</span><span class="s2"><a
+            href="/book/52036/">养鬼为祸(劫天运)</a></span><span class="s3"><a
+            href="/book/52036/">第五千零九十一章：不虚</a></span><span
+            class="s4">浮梦流年</span><span class="s5">08-19</span></li>
 
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+      </ul>
+    </div>
+    <div class="r bd">
+      <h2>最新入库小说</h2>
 
-    <div class="container marketing">
+      <ul>
+        <li><span class="s1">[修真]</span><span class="s2"><a
+            href="/book/57277/">洪荒离域</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57276/">独属王者的荣耀</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57275/">我的师姐你惹不起</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57274/">胭脂商后</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/57273/">我在玄幻当大佬</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57272/">斗罗大陆之舞龙月语</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57271/">我的东京怪谈</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57270/">蚀月编史</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57269/">武祖的日常</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[科幻]</span><span class="s2"><a
+            href="/book/57268/">我在影视世界当大佬</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/57267/">开挂的恐鳄</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57266/">靳家小姐的医劫</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57265/">傅爷天天都宠我</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/57264/">我乃路易十四</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57263/">风起一九八一</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57262/">财务自由后的生活</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57261/">鬼帝的天才弃妃</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻]</span><span class="s2"><a
+            href="/book/57260/">新纪元119年</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57259/">怪物被杀就会死</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[穿越]</span><span class="s2"><a
+            href="/book/57258/">太子妃上位攻略</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[玄幻]</span><span class="s2"><a
+            href="/book/57257/">天定神妃</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[修真]</span><span class="s2"><a
+            href="/book/57256/">武神皇庭</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57255/">我的青梅不太甜</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57254/">我能吸邪气</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57253/">从今开始当学霸</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[穿越]</span><span class="s2"><a
+            href="/book/57252/">吃货大帝国</a></span><span class="s5">08-19</span>
+        </li>
+        <li><span class="s1">[穿越]</span><span class="s2"><a
+            href="/book/57251/">穿越之医妃不萌</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[科幻]</span><span class="s2"><a
+            href="/book/57250/">诸天洪荒起源</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[其他]</span><span class="s2"><a
+            href="/book/57249/">这个策划是仙帝</a></span><span
+            class="s5">08-19</span></li>
+        <li><span class="s1">[都市]</span><span class="s2"><a
+            href="/book/57248/">夜帝老公别装呆</a></span><span
+            class="s5">08-19</span></li>
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="link">友情连接：
+    <a href="/" target="_blank">笔趣阁</a>、
+    <a href="/book/3773/" target="_blank">三寸人间</a>、
+    <a href="http://www.800xs.net/" target="_blank">800小说网</a>、
+    <a href="http://www.bxwx.io/" target="_blank">笔下文学</a>、
+    <a href="http://www.50zw.la/" target="_blank">武林中文网</a>、
+    <a href="http://www.630book.la/" target="_blank">免费全本小说</a>、
+    <a href="http://www.lewen.la/" target="_blank">乐文小说网</a>、
+    <a href="http://www.siluke.org/" target="_blank">思路客小说网</a>、
+    <a href="http://www.3qzone.com/" target="_blank">3Q中文网</a>、
+    <a href="http://www.qishu.tw/" target="_blank" title="奇书网">奇书网</a>、
+    <a href="http://www.bbiquge.com/" target="_blank" title="笔趣阁">笔趣阁</a>、
+    <a href="http://www.qqxs5200.com/" target="_blank" title="千千小说网">千千小说网</a>、
+    <a href="http://www.qb5.tw/" target="_blank" title="全本小说网">全本小说网</a>、
+    <a href="http://www.52bqg.com/" target="_blank" title="笔趣阁">笔趣阁</a>、
+    <a href="http://www.xs7.la/" target="_blank" title="小说旗">小说旗</a>、
+    <a href="http://www.67shu.com/" target="_blank" title="67书吧">67书吧</a>、
+    <a href="http://www.shumilou.org/" target="_blank" title="书迷楼">书迷楼</a>、
+    <a href="http://www.44pq.cc/" target="_blank" title="风雨小说网">风雨小说网</a>、
+    <a href="https://www.qb5200.tw/" target="_blank" title="全本小说网">全本小说网</a>、
+    <a href="http://www.69shu.org/" target="_blank" title="69书吧">69书吧</a>、
+    <a href="http://www.qqxsw.co/" target="_blank">千千小说</a>、
+    <a href="http://www.630book.cc/" target="_blank">恋上你看书网</a>
+  </div>
+  <hr>
+  <script>footer();
+  tj();</script>
+  <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
+  <p>Copyright &#169; 2016 笔趣阁 All Rights Reserved.</p>
+  <div style="display:none">
+    <script src="./z_stat.php" language="JavaScript"></script>
+  </div>
 
-      <!-- START THE FEATURETTES -->
+</div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+</body>
 </html>
