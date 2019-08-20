@@ -182,7 +182,7 @@ function login() {
         '&nbsp;&nbsp;|&nbsp;&nbsp;<a rel="nofollow" href="javascript:;" onclick="logout();">退出登录</a>&nbsp;');
   } else {
     document.write(
-        '<form name="mylogin" id="mylogin" method="post" action="/user/login.php?action=login&usecookie=1&url='
+        '<form name="mylogin" id="mylogin" method="post" action="/user/login'
         + location.href + '">');
     document.write(
         '<div class="cc"><div class="txt">账号：</div><div class="inp"><input type="text" name="LoginForm[username]" id="username" /></div></div>');
