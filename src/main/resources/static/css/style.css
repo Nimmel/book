@@ -65,7 +65,7 @@ img {
 }
 
 .wrap .logo a {
-  background: url(/images/logo.png) no-repeat;
+  background: url(/static/images/logo.png) no-repeat;
   display: block;
   float: left;
   height: 60px;

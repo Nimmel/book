@@ -9,12 +9,27 @@ scrapy
 ...
 
 ##前端部分  
-使用了css和js对页面进行排版与交互，主要有三个展示页面
+使用css和js对页面进行排版 数据交互使用ajax
 
-### 首页
+### 登陆
 * 登陆：/user/login
 * 注册：/user/register
-      
+* 登陆方案  
+Cookie  存储客户端状态(小于4KB)  
+Session 存储服务端状态(消耗服务端资源)  
+Server Side Session,cookie存储sessionId 服务端存储session
+Client Side Session,session加密处理后由cookie保存  
+
+* 后期拓展  
+令牌认证JWT(Json Web Token 无状态、跨域访问、CSRF攻击 https://blog.csdn.net/KKKun_Joe/article/details/81878231)  
+授权登陆OAuth2.0 
+权限管理springboot-security  
+
+
+
+
+
+### 首页 
 搜索栏：/search  
 导航栏：小说分为玄幻、修真、科幻、都市、其他  
 我的书架: 暂时未开发  
