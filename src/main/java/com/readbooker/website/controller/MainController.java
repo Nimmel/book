@@ -8,6 +8,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.readbooker.website.model.entity.User;
 import com.readbooker.website.model.vo.ResultInfo;
+import com.readbooker.website.service.BookService;
 import com.readbooker.website.service.UserService;
 import com.readbooker.website.util.CookieUtil;
 import java.io.IOException;
@@ -34,6 +35,10 @@ public class MainController {
 	@Autowired
 	private UserService userService;
 
+
+  @Autowired(required=false)
+  private BookService bookService;
+
 //	@Autowired
 //	private HttpServletResponse response;
 
@@ -47,7 +52,10 @@ public class MainController {
 	}
 
 	@GetMapping("/index")
-	public String index() {
+	public String index(Model model) {
+	  model.addAttribute("hotClicks",bookService.findTopsClickBooks(null,4));
+    // 准备数据：首页默认不指定小说类型展示
+    model.addAttribute("hotRecoms",bookService.findTopsRecommentBooks(null,10));
 		return "index";
 	}
 
@@ -118,4 +126,5 @@ public class MainController {
 	public String search() {
 		return "search";
 	}
+
 }

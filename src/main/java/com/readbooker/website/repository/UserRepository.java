@@ -21,8 +21,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 */
 	Page<User> findByUsernameLike(String name, Pageable pageable);
 
-
-
 	User findByUsername(String username);
 	void deleteById(Long id);
 }
