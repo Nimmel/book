@@ -2,12 +2,13 @@ package com.readbooker.website.service;
 
 import com.readbooker.website.model.entity.Book;
 import java.util.List;
+import org.springframework.data.domain.Page;
 
 public interface BookService {
-  Book findBookById(long id);
+  Book findBookById(Long id);
   // 点击量前十
-  List<Book> findTopsClickBooks(String label,int num);
+  Page<Book> findTopsClickBooks(String label,Integer num);
   // 推荐量前十
-  List<Book> findTopsRecommentBooks(String label,int num);
+  Page<Book> findTopsRecommendBooks(String label,Integer num);
 
 }

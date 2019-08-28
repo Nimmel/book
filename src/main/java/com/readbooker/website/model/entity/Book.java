@@ -30,9 +30,9 @@ public class Book {
     @Column(nullable=false)
     String updateTime;
     // 推荐：起点爬取
-    @Column
+    @Column(nullable=true)
     long recommends;
     // 点击量 本站
-    @Column
+    @Column(nullable=true)
     long clicks;
 }

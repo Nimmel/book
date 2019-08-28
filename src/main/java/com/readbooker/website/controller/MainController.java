@@ -6,6 +6,7 @@ package com.readbooker.website.controller;
 //import com.waylau.spring.boot.blog.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.readbooker.website.model.entity.Book;
 import com.readbooker.website.model.entity.User;
 import com.readbooker.website.model.vo.ResultInfo;
 import com.readbooker.website.service.BookService;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +38,7 @@ public class MainController {
 	private UserService userService;
 
 
-  @Autowired(required=false)
+  @Autowired
   private BookService bookService;
 
 //	@Autowired
@@ -53,9 +55,11 @@ public class MainController {
 
 	@GetMapping("/index")
 	public String index(Model model) {
-	  model.addAttribute("hotClicks",bookService.findTopsClickBooks(null,4));
-    // 准备数据：首页默认不指定小说类型展示
-    model.addAttribute("hotRecoms",bookService.findTopsRecommentBooks(null,10));
+		// 准备数据：首页默认不指定小说类型展示
+		Page<Book> lbooks = bookService.findTopsClickBooks(null,4);
+		model.addAttribute("hotClicks",(List<Book>)lbooks.getContent());
+		Page<Book> rbooks = bookService.findTopsRecommendBooks(null,10);
+    model.addAttribute("hotRecommends",(List<Book>)rbooks.getContent());
 		return "index";
 	}
 

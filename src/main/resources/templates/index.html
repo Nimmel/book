@@ -48,84 +48,34 @@
   <div class="hot">
     <!-- 选择标签类型小说推荐：推荐量前四 -->
     <div class="l bd">
-      <div class="item">
-        <div class="p10">
-          <div class="image"><a href="/book/4772/" target="_blank"><img
-              src="/images/4772s.jpg" alt="圣墟"></a></div>
-          <dl>
-            <dt><span>辰东</span><a href="/book/4772/" target="_blank">圣墟</a>
-            </dt>
-            <dd>　　在破败中崛起，在寂灭中复苏。　　沧海成尘，雷电枯竭，那一缕幽雾又一次临近大地，世间的枷锁被打开了，一个全新的世界......</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="item">
-        <div class="p10">
-          <div class="image"><a href="/book/3773/" target="_blank"><img
-              src="/images/3773s.jpg" alt="三寸人间"></a></div>
-          <dl>
-            <dt><span>耳根</span><a href="/book/3773/" target="_blank">三寸人间</a>
-            </dt>
-            <dd>　　举头三尺无神明，掌心三寸是人间。　　这是耳根继《仙逆》《求魔》《我欲封天》《一念永恒》后，创作的第五部长篇小说《......</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="item">
-        <div class="p10">
-          <div class="image"><a href="/book/24277/" target="_blank"><img
-              src="/images/24277s.jpg" alt="飞剑问道"></a></div>
-          <dl>
-            <dt><span>我吃西红柿</span><a href="/book/24277/"
-                                     target="_blank">飞剑问道</a></dt>
-            <dd>　　在这个世界，有狐仙、河神、水怪、大妖，也有求长生的修行者。　　修行者们，　　开法眼，可看妖魔鬼怪。　　炼一口飞剑......</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="item">
-        <div class="p10">
-          <div class="image"><a href="/book/24276/" target="_blank"><img
-              src="/images/24276s.jpg" alt="元尊"></a></div>
-          <dl>
-            <dt><span>天蚕土豆</span><a href="/book/24276/"
-                                    target="_blank">元尊</a></dt>
-            <dd>天地为炉，万物为铜，阴阳为炭，造化为工。
-              气运之争，蟒雀吞龙。
-              究竟是蟒雀为尊，还是圣龙崛起，凌驾众生？
-              这是气掌乾......
-            </dd>
-          </dl>
-        </div>
-      </div>
 
+      <div class="item" th:each="book: ${hotClicks}">
+        <div class="p10">
+          <div class="image">
+            <a th:href="@{'/book/' + ${book.getId()}}">
+            <img th:src="@{/images/{filename}(filename=${book.getId()+'.jpg'})}" th:alt="${book.getName()}" />
+            </a>
+          </div>
+          <dl>
+            <dt>
+              <span th:text="${book.getAuthor()}"></span>
+              <a th:href="@{'/book/' + ${book.getId()}}" th:text="${book.getName()}"></a>
+            </dt>
+            <dd th:text="${book.getIntroduction()}"></dd>
+          </dl>
+        </div>
+      </div>
     </div>
     <!-- 选择标签类型小说推荐：点击量前10 -->
     <div class="r bd">
       <h2>强力推荐</h2>
       <ul class="lis">
-        <li><span class="s1">[修真]</span><span class="s2"><a
-            href="/book/110/">不朽凡人</a></span><span class="s5">鹅是老五</span>
-        </li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/420/">龙王传说</a></span><span class="s5">唐家三少</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/9868/">超级全能学生</a></span><span class="s5">杀猪刀</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/1913/">女神的贴身侍卫</a></span><span
-            class="s5">我自对天笑</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/9864/">神级透视</a></span><span class="s5">不醉</span></li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/14719/">牧神记</a></span><span class="s5">宅猪</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/9860/">我的微信连三界</a></span><span class="s5">狼烟</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/18095/">权力代言人</a></span><span class="s5">梅花三弄</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/16806/">官梯</a></span><span class="s5">钓人的鱼</span>
+        <li>
+          <span class="s1">[修真]</span>
+          <span class="s2">
+            <a href="/book/110/">不朽凡人</a>
+          </span>
+          <span class="s5">鹅是老五</span>
         </li>
       </ul>
     </div>

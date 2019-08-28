@@ -48,7 +48,13 @@ Client Side Session,session加密处理后由cookie保存
 分页
 
 
-
+### tips
+* JPA启动设置  
+create：启动时先删后建，退出时不删   
+create-drop： 启动时先删后建，退出删除  
+update： 表结构与实体类不一致，那么就修改表使它们一致，数据会保留  
+validate： 自动检验，如果表结构与实体类不一致，那么不做任何操作，报错  
+ 
 
 
 
