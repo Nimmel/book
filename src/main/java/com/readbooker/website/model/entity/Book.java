@@ -26,9 +26,13 @@ public class Book {
     String author;
     @Column(nullable=false)
     String introduction;
+    // 入库时间
+    @Column(nullable=false)
+    String insertTime;
     // 更新时间
     @Column(nullable=false)
     String updateTime;
+
     // 推荐：起点爬取
     @Column(nullable=true)
     long recommends;

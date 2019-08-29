@@ -57,9 +57,9 @@ public class MainController {
 	public String index(Model model) {
 		// 准备数据：首页默认不指定小说类型展示
 		Page<Book> lbooks = bookService.findTopsClickBooks(null,4);
-		model.addAttribute("hotClicks",(List<Book>)lbooks.getContent());
-		Page<Book> rbooks = bookService.findTopsRecommendBooks(null,10);
-    model.addAttribute("hotRecommends",(List<Book>)rbooks.getContent());
+		model.addAttribute("hotClicks",bookService.convertToList(lbooks.getContent()));
+		Page<Book> rbooks = bookService.findTopsRecommendBooks(null,9);
+    model.addAttribute("hotRecommends",bookService.convertToList(rbooks.getContent()));
 		return "index";
 	}
 

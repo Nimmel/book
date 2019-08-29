@@ -10,6 +10,7 @@ scrapy
 
 ##前端部分  
 使用css和js对页面进行排版 数据交互使用ajax
+* 使用ajax加载小说封面【未实现】
 
 ### 登陆
 * 登陆：/user/login
