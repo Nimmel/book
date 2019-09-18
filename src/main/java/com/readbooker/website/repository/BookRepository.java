@@ -13,6 +13,11 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 //  @Query("这里写正常的SQL语句")
 //  List<Book> findAllOrderByClicksDesc(Pageable pagable);
     Page<Book> findByOrderByRecommendsDesc(Pageable pagable);
+    // 根据点击量倒排
     Page<Book> findByOrderByClicksDesc(Pageable pagable);
+    // 根据更新时间倒排
+    Page<Book> findByOrderByUpdateTimeDesc(Pageable pagable);
+    // 根据入库时间排序
+    Page<Book> findByOrderByCreateTimeDesc(Pageable pagable);
 
 }

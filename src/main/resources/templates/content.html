@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:include="include/header::html('书籍目录')"></head>
+<body>
+  <div class="content_read">
+    <div class="box_con">
+      <!--网页位置-->
+      <div class="con_top">
+        <a href="/">ReadBooker</a> &gt;
+        <a href="/" th:text="${book.getCategory().getName()}">类别</a> &gt;
+        <a href="/" th:text="${book.getName()}">书名</a> &gt;
+        第一卷：才子佳人逆盛唐 第一章：此时此刻天将塌
+      </div>
+      <!--标题-->
+      <div class="bookname">
+        <h1 th:text="${chapter.getName()}">第一卷：才子佳人逆盛唐 第一章：此时此刻天将塌</h1>
+        <div class="bottem1">
+          <a href="javascript:;" onclick="showpop_vote(34938);">投推荐票</a> <a href="http://www.xbiquge.la/34/34938/">上一章</a> ← <a href="http://www.xbiquge.la/34/34938/">章节目录</a> → <a href="http://www.xbiquge.la/34/34938/16237333.html">下一章</a> <a href="javascript:;" onclick="showpop_addmark(34938,16237332);">加入书签</a>
+        </div>
+      </div>
+      <!--正文-->
+      <div id="content">
+        <p th:text="${chapter.getContent()}">正文内容</p>
+      </div>
+      <!--翻页-->
+      <div class="bottem2">
+        <a href="javascript:;" onclick="showpop_vote(34938);">投推荐票</a>
+        <a th:href="@{'/book?bid=' + ${book.getId()} + '&cid='+ ${chapter.before()}}">上一章</a> ←
+        <a th:href="@{'/book/' + ${book.getId()}}">章节目录</a> →
+        <a th:href="@{'/book?bid=' + ${book.getId()} + '&cid='+ ${chapter.next()}}">下一章</a>
+        <!--未完成-->
+        <a href="javascript:;" onclick="showpop_addmark(34938,16237332);">加入书签</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

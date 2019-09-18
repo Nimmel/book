@@ -2,47 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadBooker</title>
-    <meta name="keywords" content="bootstrap,java,小说,ES...">
-    <meta name="description" content="一个小说网站，学习使用，非商业用途">
-    <link type="text/css" href="../css/style.css" rel="stylesheet" >
-
-    <script src="../js/jquery-3.3.1.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/push.js"></script>
-    <script src="../js/common.js"></script>
-    <script src="../js/book.js"></script>
-    <script src="../js/share.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/include.js"></script>
-  </head>
+  <head th:include="include/header::html('ReadBooker')"></head>
 <body>
-
-<div id="header">
-
-</div>
-
-
-<div class="nav">
-  <ul>
-    <li><a href="/">首页</a></li>
-    <!--我的书架功能待开发-->
-    <li><a href="/modules/article/bookcase.php">我的书架</a></li>
-    <li><a href="/xuehuan/">玄幻小说</a></li>
-    <li><a href="/xiuzhen/">修真小说</a></li>
-    <li><a href="/dushi/">都市小说</a></li>
-    <li><a href="/chuanyue/">穿越小说</a></li>
-    <li><a href="/wangyou/">网游小说</a></li>
-    <li><a href="/kehuan/">科幻小说</a></li>
-    <li><a href="/qita/">其他小说</a></li>
-    <li><a href="/paihangbang/">排行榜单</a></li>
-    <li><a href="/wanben/">完本小说</a></li>
-  </ul>
-</div>
 
 <div class="wrap">
   <div class="hot">
@@ -81,267 +42,58 @@
   </div>
   <div class="up">
     <div class="l bd">
-      <h2> 最近更新小说列表</h2>
+      <h2>最近更新小说列表</h2>
       <ul>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/53233/">夫君你完了</a></span><span class="s3"><a
-            href="/book/53233/">第179章 家人的温暖</a></span><span
-            class="s4">夏末之殇</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
-            href="/book/52972/">十二星座与四大神兽</a></span><span class="s3"><a
-            href="/book/52972/">第307章：大结局3</a></span><span
-            class="s4">杜林圭</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/54676/">倾世绝宠之错位王妃</a></span><span class="s3"><a
-            href="/book/54676/">第169章 每个人遇到真爱的概率</a></span><span class="s4">叶倾歌丶</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/55810/">暗黑系暖婚</a></span><span class="s3"><a
-            href="/book/55810/">帝后51：宁也番外（在筹备出版后续等通知</a></span><span
-            class="s4">顾南西</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/34469/">盛嫁无双：神医王爷不良妃</a></span><span class="s3"><a
-            href="/book/34469/">641.【番外最后一章】——小星儿</a></span><span class="s4">三木游游</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/30114/">权宠之仵作医妃</a></span><span class="s3"><a
-            href="/book/30114/">第562章 大结局（全文终）</a></span><span class="s4">步月浅妆</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/51438/">慢穿系统：宿主拒绝谈恋爱</a></span><span class="s3"><a
-            href="/book/51438/">架空:炮灰才是真绝色(93)</a></span><span
-            class="s4">烟末</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/51016/">穿回七零嫁兵哥</a></span><span class="s3"><a
-            href="/book/51016/">第四百九十一章</a></span><span class="s4">暗幽灵</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/50496/">末世空间：拐个大佬种包子</a></span><span class="s3"><a
-            href="/book/50496/">283：去凤族</a></span><span
-            class="s4">禾呈星云</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/36860/">总统谋妻：婚不由你</a></span><span class="s3"><a
-            href="/book/36860/">第五百九十二章：因为有你、一生欢喜</a></span><span class="s4">李不言</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/49951/">快穿之倾城</a></span><span class="s3"><a
-            href="/book/49951/">新文推荐</a></span><span
-            class="s4">诚沫</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/55782/">重生七零：农门军媳有点甜</a></span><span class="s3"><a
-            href="/book/55782/">027：全剧终</a></span><span class="s4">浅尾鱼</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/56478/">时尚女王的御夫攻略</a></span><span class="s3"><a
-            href="/book/56478/">大结局下</a></span><span
-            class="s4">斑点</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
-            href="/book/52034/">秘巫之主</a></span><span class="s3"><a
-            href="/book/52034/">第七百二十章 圣约泥板的另一种用处</a></span><span class="s4">真愚老人</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/27108/">隐婚试爱：宠妻365式</a></span><span class="s3"><a
-            href="/book/27108/">771 宠（27）只要我在你心里</a></span><span class="s4">清风恋飘雪</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/56138/">红警的征途</a></span><span class="s3"><a
-            href="/book/56138/">第二十五章爱丽丝行动（一）</a></span><span
-            class="s4">皇天当立</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/13079/">修仙强少在校园</a></span><span class="s3"><a
-            href="/book/13079/">第1732章 合道中期</a></span><span
-            class="s4">唐箫</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[修真小说]</span><span class="s2"><a
-            href="/book/51039/">重生之最强王爷</a></span><span class="s3"><a
-            href="/book/51039/">第三百五十五章 一网成擒</a></span><span
-            class="s4">海天升明月</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻小说]</span><span class="s2"><a
-            href="/book/32203/">妖帝撩人：逆天邪妃太嚣张</a></span><span class="s3"><a
-            href="/book/32203/">第700章 紫鬼山现世（二更）</a></span><span class="s4">公子安爷</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[修真小说]</span><span class="s2"><a
-            href="/book/50121/">女帝的绝世仙师</a></span><span class="s3"><a
-            href="/book/50121/">240 萧婉儿的觉醒！（求个订阅看看）</a></span><span
-            class="s4">一只话梅</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/51483/">苏爽快穿：打脸成瘾</a></span><span class="s3"><a
-            href="/book/51483/">47：大反转【完结撒花，附完结感言】</a></span><span
-            class="s4">媚笑可倾城</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/53528/">邪王追妻：王妃有毒</a></span><span class="s3"><a
-            href="/book/53528/">第二百八十三章 我想这辈子都不会分开了！（大结局下）</a></span><span
-            class="s4">万盏夜色</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/56795/">云里山河</a></span><span class="s3"><a
-            href="/book/56795/">【正文章五五：狭路相逢】生死一线（下）</a></span><span
-            class="s4">君子长归</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[其他小说]</span><span class="s2"><a
-            href="/book/50729/">天芳</a></span><span class="s3"><a
-            href="/book/50729/">204章 三家的官司</a></span><span
-            class="s4">云芨</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/50541/">重生之逆行修仙</a></span><span class="s3"><a
-            href="/book/50541/">第一七六章 青锋三尺</a></span><span
-            class="s4">糖醋于</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[都市小说]</span><span class="s2"><a
-            href="/book/51655/">冷少甜宠落跑娇妻</a></span><span class="s3"><a
-            href="/book/51655/">他回了</a></span><span
-            class="s4">夏木木子</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[穿越小说]</span><span class="s2"><a
-            href="/book/56529/">将军抢亲记</a></span><span class="s3"><a
-            href="/book/56529/">大结局</a></span><span class="s4">河妖</span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他小说]</span><span class="s2"><a
-            href="/book/52314/">超神学院之时王</a></span><span class="s3"><a
-            href="/book/52314/">第306章 放开那个女孩</a></span><span
-            class="s4">乱世孤影</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[其他小说]</span><span class="s2"><a
-            href="/book/45918/">田园福妃</a></span><span class="s3"><a
-            href="/book/45918/">第四百七十四章</a></span><span
-            class="s4">滋洋</span><span class="s5">08-19</span></li>
-        <li><span class="s1">[科幻小说]</span><span class="s2"><a
-            href="/book/52036/">养鬼为祸(劫天运)</a></span><span class="s3"><a
-            href="/book/52036/">第五千零九十一章：不虚</a></span><span
-            class="s4">浮梦流年</span><span class="s5">08-19</span></li>
-
-
+        <li th:each="book:${updateBooks}">
+          <span class="s1" th:text="${book.getCategory().getName()}">[穿越小说]</span>
+          <span class="s2">
+            <a th:href="@{'/book/' + ${book.getId()}}" th:text="${book.getName()}">夫君你完了</a>
+          </span>
+          <span class="s3">
+            <a th:href="@{'/book?bid=' + ${book.getId()} + '&cid='+ ${book.getLaterChapter().getId()}}"
+               th:text="${book.getLaterChapter().getName()}">
+              第179章 家人的温暖
+            </a>
+          </span>
+          <span class="s4" th:text="${book.getAuthor()}">夏末之殇</span>
+          <span class="s5" th:text="${book.format(book.getUpdateTime())}">08-19</span>
+        </li>
       </ul>
     </div>
     <div class="r bd">
       <h2>最新入库小说</h2>
-
       <ul>
-        <li><span class="s1">[修真]</span><span class="s2"><a
-            href="/book/57277/">洪荒离域</a></span><span class="s5">08-19</span>
+        <li th:each="book:${importBooks}">
+          <span class="s1" th:text="${book.getCategory().getName()}">[穿越小说]</span>
+          <span  class="s2" >
+            <a th:href="@{'/book/' + ${book.getId()}}" th:text="${book.getName()}">夫君你完了</a>
+          </span>
+          <span class="s4" th:text="${book.getAuthor()}">夏末之殇</span>
+          <span class="s52" th:text="${book.format(book.getCreateTime())}">08-19</span>
         </li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57276/">独属王者的荣耀</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57275/">我的师姐你惹不起</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57274/">胭脂商后</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/57273/">我在玄幻当大佬</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57272/">斗罗大陆之舞龙月语</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57271/">我的东京怪谈</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57270/">蚀月编史</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57269/">武祖的日常</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[科幻]</span><span class="s2"><a
-            href="/book/57268/">我在影视世界当大佬</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/57267/">开挂的恐鳄</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57266/">靳家小姐的医劫</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57265/">傅爷天天都宠我</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/57264/">我乃路易十四</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57263/">风起一九八一</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57262/">财务自由后的生活</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57261/">鬼帝的天才弃妃</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻]</span><span class="s2"><a
-            href="/book/57260/">新纪元119年</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57259/">怪物被杀就会死</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[穿越]</span><span class="s2"><a
-            href="/book/57258/">太子妃上位攻略</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[玄幻]</span><span class="s2"><a
-            href="/book/57257/">天定神妃</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[修真]</span><span class="s2"><a
-            href="/book/57256/">武神皇庭</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57255/">我的青梅不太甜</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57254/">我能吸邪气</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57253/">从今开始当学霸</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[穿越]</span><span class="s2"><a
-            href="/book/57252/">吃货大帝国</a></span><span class="s5">08-19</span>
-        </li>
-        <li><span class="s1">[穿越]</span><span class="s2"><a
-            href="/book/57251/">穿越之医妃不萌</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[科幻]</span><span class="s2"><a
-            href="/book/57250/">诸天洪荒起源</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[其他]</span><span class="s2"><a
-            href="/book/57249/">这个策划是仙帝</a></span><span
-            class="s5">08-19</span></li>
-        <li><span class="s1">[都市]</span><span class="s2"><a
-            href="/book/57248/">夜帝老公别装呆</a></span><span
-            class="s5">08-19</span></li>
-
-
       </ul>
     </div>
   </div>
 </div>
 <div class="footer">
   <div class="link">友情连接：
-    <a href="/" target="_blank">笔趣阁</a>、
-    <a href="/book/3773/" target="_blank">三寸人间</a>、
-    <a href="http://www.800xs.net/" target="_blank">800小说网</a>、
     <a href="http://www.bxwx.io/" target="_blank">笔下文学</a>、
     <a href="http://www.50zw.la/" target="_blank">武林中文网</a>、
     <a href="http://www.630book.la/" target="_blank">免费全本小说</a>、
-    <a href="http://www.lewen.la/" target="_blank">乐文小说网</a>、
-    <a href="http://www.siluke.org/" target="_blank">思路客小说网</a>、
-    <a href="http://www.3qzone.com/" target="_blank">3Q中文网</a>、
-    <a href="http://www.qishu.tw/" target="_blank" title="奇书网">奇书网</a>、
-    <a href="http://www.bbiquge.com/" target="_blank" title="笔趣阁">笔趣阁</a>、
-    <a href="http://www.qqxs5200.com/" target="_blank" title="千千小说网">千千小说网</a>、
-    <a href="http://www.qb5.tw/" target="_blank" title="全本小说网">全本小说网</a>、
-    <a href="http://www.52bqg.com/" target="_blank" title="笔趣阁">笔趣阁</a>、
-    <a href="http://www.xs7.la/" target="_blank" title="小说旗">小说旗</a>、
-    <a href="http://www.67shu.com/" target="_blank" title="67书吧">67书吧</a>、
-    <a href="http://www.shumilou.org/" target="_blank" title="书迷楼">书迷楼</a>、
-    <a href="http://www.44pq.cc/" target="_blank" title="风雨小说网">风雨小说网</a>、
-    <a href="https://www.qb5200.tw/" target="_blank" title="全本小说网">全本小说网</a>、
-    <a href="http://www.69shu.org/" target="_blank" title="69书吧">69书吧</a>、
-    <a href="http://www.qqxsw.co/" target="_blank">千千小说</a>、
-    <a href="http://www.630book.cc/" target="_blank">恋上你看书网</a>
   </div>
-  <hr>
-  <script>footer();
-  tj();</script>
-  <p>本站所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。</p>
-  <p>Copyright &#169; 2016 笔趣阁 All Rights Reserved.</p>
-  <div style="display:none">
-    <script src="./z_stat.php" language="JavaScript"></script>
-  </div>
-
+  <script>
+    footer();
+    // tj();
+  </script>
 </div>
 
 </body>
+  <script>
+    function showChapter(id) {
+    }
+  </script>
+
+
 </html>
+
+

@@ -13,10 +13,17 @@ public interface BookService {
   // 推荐量前十
   Page<Book> findTopsRecommendBooks(String label,Integer num);
 
-  @NonNull
-  BookVo convertTo(@NonNull Book book);
+  Page<Book> findLastUpdateBooks(Integer num);
+
+  Page<Book> findLastImportBooks(Integer num);
 
   @NonNull
-  List<BookVo> convertToList(@NonNull List<Book> book);
+  BookVo convertVo(@NonNull Book book);
+
+  @NonNull
+  List<BookVo> convertVos(@NonNull List<Book> book);
+
+
+
 
 }

@@ -56,10 +56,18 @@ public class MainController {
 	@GetMapping("/index")
 	public String index(Model model) {
 		// 准备数据：首页默认不指定小说类型展示
+		// 点击量前四
 		Page<Book> lbooks = bookService.findTopsClickBooks(null,4);
-		model.addAttribute("hotClicks",bookService.convertToList(lbooks.getContent()));
+		model.addAttribute("hotClicks",bookService.convertVos(lbooks.getContent()));
+		// 强烈推荐10本
 		Page<Book> rbooks = bookService.findTopsRecommendBooks(null,9);
-    model.addAttribute("hotRecommends",bookService.convertToList(rbooks.getContent()));
+    model.addAttribute("hotRecommends",bookService.convertVos(rbooks.getContent()));
+    // 最近更新前20
+		Page<Book> updateBooks = bookService.findLastUpdateBooks(4);
+		model.addAttribute("updateBooks",bookService.convertVos(updateBooks.getContent()));
+		// 最近入库20
+		Page<Book> importBooks = bookService.findLastImportBooks(4);
+		model.addAttribute("importBooks",bookService.convertVos(importBooks.getContent()));
 		return "index";
 	}
 

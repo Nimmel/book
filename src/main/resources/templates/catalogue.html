@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:include="include/header::html('书籍目录')"></head>
+<body>
+<div class="box_con">
+  <div class="con_top">
+    <!--封面-->
+    <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="./伏天氏小说_净无痕_伏天氏最新章节_伏天氏无弹窗_新笔趣阁_files/type-button-7.jpg"><a class="shareCount"></a></div>
+    <!--root-->
+    <a href="http://www.xbiquge.la/">新笔趣阁</a> &gt;
+    <!--category-->
+    <a href="http://www.xbiquge.la/fenlei/1_1.html">玄幻小说</a>  &gt;
+    <!--小说名称-->
+    <span>伏天氏最新章节目录</span>
+  </div>
+  <div id="maininfo">
+    <div id="info">
+      <!--小说名称-->
+      <h1 th:text="${book.getName()}">伏天氏</h1>
+      <!--作者名称-->
+      <p>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<span th:text="${book.getAuthor()}">净无痕</span></p>
+      <p>动&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作：<a href="javascript:;" onclick="showpop_addcase(951);">加入书架</a>,  <a href="javascript:;" onclick="showpop_vote(951);">投推荐票</a>,  <a href="http://www.xbiquge.la/0/951/#footer">直达底部</a></p>
+      <p>最后更新：<span th:text="${book.getUpdateTime()}">2019-09-14 21:55:00</span></p>
+      <p>最新章节：
+        <a th:href="@{'/book?bid=' + ${book.getId()} + '&cid='+ ${book.getLaterChapter().getId()}}"
+           th:text="${book.getLaterChapter().getName()}">第337章 赶赴皇城</a>
+      </p>
+    </div>
+    <div id="intro">
+      <p>
+        <font style="color:#0066FF">
+          <!--手机阅读接口暂无-->
+          <a href="http://m.xbiquge.la/wapbook/951.html" target="_blank">手机阅读</a>
+        </font>
+      </p>
+      <!--简介-->
+      <p th:text="${book.getIntroduction()}">简介</p>
+    </div>
+  </div>
+  <div id="sidebar">
+    <!--图片-->
+    <div id="fmimg">
+      <img width="120" height="150" th:src="@{/images/{filename}(filename=${book.getId()+'.jpg'})}" th:alt="${book.getName()}" />
+      <span class="b"></span>
+    </div>
+  </div>
+  <!--同类型推荐-->
+  <div id="listtj">&nbsp;推荐阅读：
+    <a href="http://www.xbiquge.la/15/15409/" target="_blank">牧神记</a>&nbsp;
+    <a href="http://www.xbiquge.la/2/2029/" target="_blank">极品透视</a>&nbsp;
+    <a href="http://www.xbiquge.la/2/2208/" target="_blank">霸皇纪</a>&nbsp;
+  </div>
+</div>
+<div class="box_con">
+  <div id="list" th:each="chapter:${book.getChapters()}">
+    <dl>
+      <dd>
+        <!--          <a href="http://www.xbiquge.la/0/951/827334.html">第一章 此间少年</a>-->
+        <a th:href="@{'/book?bid=' + ${book.getId()} + '&cid='+ ${chapter.getId()}}"
+           th:text="${chapter.getName()}"></a>
+      </dd>
+    </dl>
+  </div>
+</div>
+</body>
+</html>
